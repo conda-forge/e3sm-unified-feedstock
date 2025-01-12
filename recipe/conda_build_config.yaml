@@ -1,3 +1,7 @@
+channel_sources:
+  - conda-forge/label/mpas_analysis_dev,conda-forge
+channel_targets:
+  - conda-forge e3sm_unified_dev
 mpi:
   - nompi
   - openmpi
