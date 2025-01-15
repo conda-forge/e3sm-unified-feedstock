@@ -52,7 +52,7 @@ requirements:
     - livvkit 3.1.0
     - mache 1.27.0
     - moab 5.5.1 {{ mpi_prefix }}_tempest_*  # [mpi != 'hpc']
-    - mosaic
+    - mosaic 1.0.0  # [py>=310]
     - mpas-analysis 1.13.0rc3
     - mpas_tools 0.36.0
     - nco 5.3.1  # [mpi != 'hpc']
@@ -63,7 +63,7 @@ requirements:
     - uxarray >=2024.12.0
     - xcdat 0.7.3
     - zppy 2.5.0
-    - zstash 1.4.2  # [linux]
+    - zstash 1.4.4rc1  # [linux]
 
     ### mkdocs
     - mkdocs-material
