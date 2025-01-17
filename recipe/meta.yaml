@@ -62,7 +62,8 @@ requirements:
     - tempest-extremes 2.2.3 {{ mpi_prefix }}_*  # [mpi != 'hpc']
     - uxarray >=2024.12.0
     - xcdat 0.7.3
-    - zppy 2.5.0
+    - zppy 3.0.0rc1
+    - zppy-interfaces 0.1.1
     - zstash 1.4.4rc1  # [linux]
 
     ### mkdocs
