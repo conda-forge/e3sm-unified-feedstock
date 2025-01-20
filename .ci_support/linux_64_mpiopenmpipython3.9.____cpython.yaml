@@ -1,7 +1,7 @@
 cdt_name:
 - conda
 channel_sources:
-- conda-forge/label/chemdyg_dev,conda-forge/label/e3sm_diags_dev,conda-forge/label/mpas_analysis_dev,conda-forge/label/zppy_dev,conda-forge/label/zstash_dev,conda-forge
+- conda-forge/label/chemdyg_dev,conda-forge/label/e3sm_diags_dev,conda-forge/label/mache_dev,conda-forge/label/mpas_analysis_dev,conda-forge/label/zppy_dev,conda-forge/label/zstash_dev,conda-forge
 channel_targets:
 - conda-forge e3sm_unified_dev
 docker_image:
