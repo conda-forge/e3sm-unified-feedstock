@@ -61,7 +61,8 @@ requirements:
     - squadgen 1.2.2  # [linux]
     - tempest-remap 2.2.0  # [mpi != 'hpc']
     - tempest-extremes 2.2.3 {{ mpi_prefix }}_*  # [mpi != 'hpc']
-    - uxarray >=2024.12.0
+    - uxarray 2024.11.1  # [py<310]
+    - uxarray >=2024.12.0  # [py>=310]
     - xcdat 0.7.3
     - zppy 3.0.0rc1
     - zppy-interfaces 0.1.1
