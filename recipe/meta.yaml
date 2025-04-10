@@ -1,5 +1,5 @@
 {% set name = "E3SM-Unified" %}
-{% set version = "1.11.0" %}
+{% set version = "1.11.1" %}
 {% set build = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/E3SM-Project/e3sm-unified/archive/{{ version }}.tar.gz
-  sha256: 369824a627f08f587fea6ed2df8e16b201605a25081d03af295e666e2c51b690
+  sha256: 9b623316249cac20075dff6cd667481f3eb166ad30f804630a5ad2e18d198bbd
 
 build:
   number: {{ build }}
@@ -63,7 +63,7 @@ requirements:
     - uxarray >=2024.12.0  # [py>=310]
     - xcdat 0.8.0
     - zppy 3.0.0
-    - zppy-interfaces 0.1.1
+    - zppy-interfaces 0.1.2
     - zstash 1.4.4  # [linux]
 
     ### mkdocs
