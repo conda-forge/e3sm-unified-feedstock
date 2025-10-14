@@ -49,7 +49,9 @@ requirements:
     - jupyter
     - livvkit 3.2.0
     - mache 1.32.0
-    - moab 5.5.1 {{ mpi_prefix }}_tempest_*  # [mpi != 'hpc']
+    # osx build doesn't support TempestRemap
+    - moab 5.5.1 {{ mpi_prefix }}_tempest_*  # [mpi != 'hpc' and not osx]
+    - moab 5.5.1 {{ mpi_prefix }}_notempest_*  # [mpi != 'hpc' and osx]
     - mosaic 1.1.0
     - mpas-analysis 1.14.0rc2
     - mpas_tools 1.4.0rc1
