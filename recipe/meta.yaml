@@ -50,8 +50,7 @@ requirements:
     - livvkit 3.2.0
     - mache 2.0.0rc4
     # osx build doesn't support TempestRemap
-    - moab 5.6.0rc2 {{ mpi_prefix }}_tempest_*  # [mpi != 'hpc' and not osx]
-    - moab 5.6.0rc2 {{ mpi_prefix }}_notempest_*  # [mpi != 'hpc' and osx]
+    - moab 5.6.0rc2 {{ mpi_prefix }}_tempest_*  # [mpi != 'hpc']
     - mosaic 1.2.0
     - mpas-analysis 1.14.0rc2
     - mpas_tools 1.4.0rc1
