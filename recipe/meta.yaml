@@ -1,5 +1,5 @@
 {% set name = "E3SM-Unified" %}
-{% set version = "1.11.1" %}
+{% set version = "1.12.0" %}
 {% set build = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/E3SM-Project/e3sm-unified/archive/{{ version }}.tar.gz
-  sha256: 9b623316249cac20075dff6cd667481f3eb166ad30f804630a5ad2e18d198bbd
+  sha256: 592f37e7ba1aa5db4f8f2b2f1a8292198b1603843fe63f1b089f3f4f0751048b
 
 build:
   number: {{ build }}
