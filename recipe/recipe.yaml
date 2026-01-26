@@ -154,6 +154,8 @@ tests:
           then: ILAMB
         - if: linux
           then: zstash
+      # nodejs (via livvkit) won't pass pip check
+      pip_check: false
 
   - script:
       - mpas_analysis --version
