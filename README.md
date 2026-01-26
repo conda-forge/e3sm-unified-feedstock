@@ -10,7 +10,6 @@ Package license: BSD-3-Clause
 Summary: A metapackage for a unified conda environment for analysis of results
 from the Energy Exascale Earth System Model (E3SM).
 
-
 Development: https://github.com/E3SM-Project/e3sm-unified
 
 Documentation: https://github.com/E3SM-Project/e3sm-unified/blob/main/README.md
