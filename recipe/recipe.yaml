@@ -12,10 +12,6 @@ package:
   name: ${{ name }}
   version: ${{ version }}
 
-source:
-  url: https://github.com/E3SM-Project/e3sm-unified/archive/${{ version }}.tar.gz
-  sha256: 592f37e7ba1aa5db4f8f2b2f1a8292198b1603843fe63f1b089f3f4f0751048b
-
 build:
   number: ${{ build }}
   skip:
