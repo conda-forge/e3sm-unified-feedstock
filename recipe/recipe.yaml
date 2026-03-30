@@ -31,7 +31,8 @@ requirements:
     ### main packages ###
     - python
     - r
-    - cdo
+    # cdo hasn't migrated to proj 9.8 yet
+    #- cdo
     #- chemdyg ==1.1.1
     #- e3sm_diags ==3.1.0
     #- e3sm_to_cmip ==1.13.0
