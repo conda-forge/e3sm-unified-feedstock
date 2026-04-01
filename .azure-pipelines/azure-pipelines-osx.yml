@@ -20,6 +20,10 @@ jobs:
         CONFIG: osx_64_mpihpcpython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+      osx_64_mpihpcpython3.14.____cp314:
+        CONFIG: osx_64_mpihpcpython3.14.____cp314
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_mpimpichpython3.11.____cpython:
         CONFIG: osx_64_mpimpichpython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -30,6 +34,10 @@ jobs:
         VMIMAGE: macOS-15
       osx_64_mpimpichpython3.13.____cp313:
         CONFIG: osx_64_mpimpichpython3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+      osx_64_mpimpichpython3.14.____cp314:
+        CONFIG: osx_64_mpimpichpython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
       osx_64_mpinompipython3.11.____cpython:
@@ -44,6 +52,10 @@ jobs:
         CONFIG: osx_64_mpinompipython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
+      osx_64_mpinompipython3.14.____cp314:
+        CONFIG: osx_64_mpinompipython3.14.____cp314
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_mpiopenmpipython3.11.____cpython:
         CONFIG: osx_64_mpiopenmpipython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -54,6 +66,10 @@ jobs:
         VMIMAGE: macOS-15
       osx_64_mpiopenmpipython3.13.____cp313:
         CONFIG: osx_64_mpiopenmpipython3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+      osx_64_mpiopenmpipython3.14.____cp314:
+        CONFIG: osx_64_mpiopenmpipython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
   timeoutInMinutes: 360
