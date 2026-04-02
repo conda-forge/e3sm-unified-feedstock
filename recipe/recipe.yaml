@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: e3sm-unified
-  version: "1.13.0rc2"
+  version: "1.13.0rc3"
   build: 0
   mpi: ${{ mpi or "nompi" }}
   mpi_prefix: ${{ "nompi" if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
@@ -15,7 +15,7 @@ package:
 build:
   number: ${{ build }}
   skip:
-    - win or match(python, "<3.11") or match(python, ">=3.14")
+    - win or match(python, "<3.11") or match(python, ">=3.15")
 
   # add build string so packages can depend on
   # mpi or nompi variants explicitly:
@@ -35,26 +35,28 @@ requirements:
     #- cdo
     #- chemdyg ==1.1.1
     - cprnc ==1.1.4
-    #- e3sm_diags ==3.1.0
-    #- e3sm_to_cmip ==1.13.0
+    #- e3sm_diags ==3.2.0
+    #- e3sm_to_cmip ==1.14.0
     #- geometric_features ==1.6.1
     - globus-cli >=3.15.0
     - ipython
     - jupyter
     #- livvkit ==3.2.0
-    - mache ==3.3.0rc1
+    - mache ==3.3.0rc2
     #- mosaic ==1.2.1
     - mpas-analysis ==1.15.0rc1
     - mpas_tools ==1.4.0
     #- pcmdi_metrics ==4.0.1
     - uxarray >=2024.12.0
-    #- xcdat ==0.10.1
+    - xcdat ==0.11.2
     #- zppy ==3.1.0
     #- zppy-interfaces ==0.2.0
     - if: mpi != "hpc"
       then:
-        - moab ==5.6.0 ${{ mpi_prefix }}_tempest_*
-        - nco ==5.3.6
+        # until https://github.com/conda-forge/moab-feedstock/pull/111 is merged
+        - if: target_platform != "linux-aarch64"
+          then: moab ==5.6.0 ${{ mpi_prefix }}_tempest_*
+        - nco ==5.3.7
         - tempest-remap ==2.2.0
         - tempest-extremes ==2.4.2 ${{ mpi_prefix }}_*
     - if: mpi != "nompi" and mpi != "hpc"
@@ -98,7 +100,7 @@ requirements:
     - metpy
     - if: mpi != "nompi" and mpi != "hpc"
       then: mpi4py
-    - ncview ==2.1.8
+    - ncview ==2.1.11
     - ncvis-climate ==2024.01.26
     - nc-time-axis
     - netcdf4 ==1.7.4 nompi_*
@@ -115,16 +117,20 @@ requirements:
     - pyproj ==3.7.2
     - pyremap
     - pytest
+    - pytorch ==2.10.0
     - pywavelets
     - r-tidyverse
-    - r-dplyr ==1.1.4
+    - r-dplyr ==1.2.0
     - r-ggplot2
     - scikit-image
     - scipy >=0.9.0
     - shapely
     - sympy >=0.7.6
     - tabulate
-    - windspharm
+    # Until https://github.com/conda-forge/pyspharm-feedstock/pull/40 is
+    # merged, pyspharm/windspharm are not available for linux-aarch64
+    - if: target_platform != "linux-aarch64"
+      then: windspharm
     - xarray ==2026.2.0
     - xesmf ==0.9.2
 
