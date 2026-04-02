@@ -100,7 +100,7 @@ requirements:
     - metpy
     - if: mpi != "nompi" and mpi != "hpc"
       then: mpi4py
-    - ncview ==2.1.8
+    - ncview ==2.1.11
     - ncvis-climate ==2024.01.26
     - nc-time-axis
     - netcdf4 ==1.7.4 nompi_*
