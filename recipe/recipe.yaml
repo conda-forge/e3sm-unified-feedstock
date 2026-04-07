@@ -36,7 +36,7 @@ requirements:
     - chemdyg ==1.1.1
     - cprnc ==1.1.4
     # cartopy constraint conflicts with livvext
-    # - e3sm_diags ==3.2.0rc1
+    - e3sm_diags ==3.2.0rc1
     - e3sm_to_cmip ==1.14.0rc1
     - geometric_features ==1.6.1
     - globus-cli >=3.15.0
@@ -81,7 +81,7 @@ requirements:
       then: ${{ mpi }}
     - blas
     - bottleneck
-    - cartopy >=0.25.0
+    - cartopy >=0.17.0
     - cmocean
     - dask ==2026.3.0
     - dogpile.cache
@@ -143,7 +143,7 @@ tests:
   - python:
       imports:
         - chemdyg
-        # - e3sm_diags
+        - e3sm_diags
         - e3sm_to_cmip
         - mpas_analysis
         - IPython
@@ -163,7 +163,7 @@ tests:
       - mpas_analysis --version
       - lex-cfg --help
       - livv --version
-      # - e3sm_diags --help
+      - e3sm_diags --help
       - jupyter --help
       - ipython -h
       - ipython3 -h
