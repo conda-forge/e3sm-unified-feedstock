@@ -4,6 +4,4 @@ channel_targets:
   - conda-forge e3sm_unified_dev
 mpi:
   - nompi
-  - openmpi
-  - mpich
   - hpc
