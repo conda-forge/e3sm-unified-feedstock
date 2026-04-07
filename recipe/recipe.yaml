@@ -54,9 +54,7 @@ requirements:
     - zppy-interfaces ==0.2.1rc1
     - if: mpi != "hpc"
       then:
-        # until https://github.com/conda-forge/moab-feedstock/pull/111 is merged
-        - if: target_platform != "linux-aarch64"
-          then: moab ==5.6.0 ${{ mpi_prefix }}_tempest_*
+        - moab ==5.6.0 ${{ mpi_prefix }}_tempest_*
         - nco ==5.3.7
         - tempest-remap ==2.2.0
         - tempest-extremes ==2.4.2 ${{ mpi_prefix }}_*
