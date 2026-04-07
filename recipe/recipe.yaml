@@ -31,7 +31,8 @@ requirements:
     ### main packages ###
     - python
     - r
-    - cdo
+    # cdo not ready for libnetcdf 4.10.0
+    # - cdo
     - chemdyg ==1.1.1
     - cprnc ==1.1.4
     # cartopy constraint conflicts with livvext
