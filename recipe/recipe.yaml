@@ -86,7 +86,8 @@ requirements:
     - dask ==2026.3.0
     - dogpile.cache
     - eofs
-    - esmf ==8.9.1 ${{ mpi_prefix }}_*
+    # can't use the conda-forge MPI version becasue it breaks e3sm_diags
+    - esmf ==8.9.1
     - esmpy ==8.9.1
     - f90nml
     - ffmpeg
