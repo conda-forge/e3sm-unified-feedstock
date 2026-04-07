@@ -41,12 +41,6 @@ description = "Build e3sm-unified-feedstock with variant linux_64_mpihpcpython3.
 [tasks."inspect-linux_64_mpihpcpython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpihpcpython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant linux_64_mpihpcpython3.13.____cp313"
-[tasks."build-linux_64_mpihpcpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpihpcpython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant linux_64_mpihpcpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_64_mpihpcpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpihpcpython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant linux_64_mpihpcpython3.14.____cp314"
 [tasks."build-linux_64_mpimpichpython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpimpichpython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant linux_64_mpimpichpython3.11.____cpython directly (without setup scripts)"
@@ -65,12 +59,6 @@ description = "Build e3sm-unified-feedstock with variant linux_64_mpimpichpython
 [tasks."inspect-linux_64_mpimpichpython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpimpichpython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant linux_64_mpimpichpython3.13.____cp313"
-[tasks."build-linux_64_mpimpichpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpimpichpython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant linux_64_mpimpichpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_64_mpimpichpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpimpichpython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant linux_64_mpimpichpython3.14.____cp314"
 [tasks."build-linux_64_mpinompipython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpinompipython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant linux_64_mpinompipython3.11.____cpython directly (without setup scripts)"
@@ -89,12 +77,6 @@ description = "Build e3sm-unified-feedstock with variant linux_64_mpinompipython
 [tasks."inspect-linux_64_mpinompipython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpinompipython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant linux_64_mpinompipython3.13.____cp313"
-[tasks."build-linux_64_mpinompipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpinompipython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant linux_64_mpinompipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_64_mpinompipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpinompipython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant linux_64_mpinompipython3.14.____cp314"
 [tasks."build-linux_64_mpiopenmpipython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpiopenmpipython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant linux_64_mpiopenmpipython3.11.____cpython directly (without setup scripts)"
@@ -113,12 +95,6 @@ description = "Build e3sm-unified-feedstock with variant linux_64_mpiopenmpipyth
 [tasks."inspect-linux_64_mpiopenmpipython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpiopenmpipython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant linux_64_mpiopenmpipython3.13.____cp313"
-[tasks."build-linux_64_mpiopenmpipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpiopenmpipython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant linux_64_mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_64_mpiopenmpipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpiopenmpipython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant linux_64_mpiopenmpipython3.14.____cp314"
 [tasks."build-linux_aarch64_mpihpcpython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpihpcpython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpihpcpython3.11.____cpython directly (without setup scripts)"
@@ -137,12 +113,6 @@ description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpihpcpyt
 [tasks."inspect-linux_aarch64_mpihpcpython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpihpcpython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant linux_aarch64_mpihpcpython3.13.____cp313"
-[tasks."build-linux_aarch64_mpihpcpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpihpcpython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpihpcpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpihpcpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpihpcpython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant linux_aarch64_mpihpcpython3.14.____cp314"
 [tasks."build-linux_aarch64_mpimpichpython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpimpichpython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpimpichpython3.11.____cpython directly (without setup scripts)"
@@ -161,12 +131,6 @@ description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpimpichp
 [tasks."inspect-linux_aarch64_mpimpichpython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpimpichpython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant linux_aarch64_mpimpichpython3.13.____cp313"
-[tasks."build-linux_aarch64_mpimpichpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpimpichpython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpimpichpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpimpichpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpimpichpython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant linux_aarch64_mpimpichpython3.14.____cp314"
 [tasks."build-linux_aarch64_mpinompipython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpinompipython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpinompipython3.11.____cpython directly (without setup scripts)"
@@ -185,12 +149,6 @@ description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpinompip
 [tasks."inspect-linux_aarch64_mpinompipython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpinompipython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant linux_aarch64_mpinompipython3.13.____cp313"
-[tasks."build-linux_aarch64_mpinompipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpinompipython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpinompipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpinompipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpinompipython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant linux_aarch64_mpinompipython3.14.____cp314"
 [tasks."build-linux_aarch64_mpiopenmpipython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpiopenmpipython3.11.____cpython directly (without setup scripts)"
@@ -209,12 +167,6 @@ description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpiopenmp
 [tasks."inspect-linux_aarch64_mpiopenmpipython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant linux_aarch64_mpiopenmpipython3.13.____cp313"
-[tasks."build-linux_aarch64_mpiopenmpipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant linux_aarch64_mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpiopenmpipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant linux_aarch64_mpiopenmpipython3.14.____cp314"
 [tasks."build-osx_64_mpihpcpython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpihpcpython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant osx_64_mpihpcpython3.11.____cpython directly (without setup scripts)"
@@ -233,12 +185,6 @@ description = "Build e3sm-unified-feedstock with variant osx_64_mpihpcpython3.13
 [tasks."inspect-osx_64_mpihpcpython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpihpcpython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant osx_64_mpihpcpython3.13.____cp313"
-[tasks."build-osx_64_mpihpcpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpihpcpython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant osx_64_mpihpcpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-osx_64_mpihpcpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpihpcpython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant osx_64_mpihpcpython3.14.____cp314"
 [tasks."build-osx_64_mpimpichpython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpimpichpython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant osx_64_mpimpichpython3.11.____cpython directly (without setup scripts)"
@@ -257,12 +203,6 @@ description = "Build e3sm-unified-feedstock with variant osx_64_mpimpichpython3.
 [tasks."inspect-osx_64_mpimpichpython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpimpichpython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant osx_64_mpimpichpython3.13.____cp313"
-[tasks."build-osx_64_mpimpichpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpimpichpython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant osx_64_mpimpichpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-osx_64_mpimpichpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpimpichpython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant osx_64_mpimpichpython3.14.____cp314"
 [tasks."build-osx_64_mpinompipython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpinompipython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant osx_64_mpinompipython3.11.____cpython directly (without setup scripts)"
@@ -281,12 +221,6 @@ description = "Build e3sm-unified-feedstock with variant osx_64_mpinompipython3.
 [tasks."inspect-osx_64_mpinompipython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpinompipython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant osx_64_mpinompipython3.13.____cp313"
-[tasks."build-osx_64_mpinompipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpinompipython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant osx_64_mpinompipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-osx_64_mpinompipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpinompipython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant osx_64_mpinompipython3.14.____cp314"
 [tasks."build-osx_64_mpiopenmpipython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpiopenmpipython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant osx_64_mpiopenmpipython3.11.____cpython directly (without setup scripts)"
@@ -305,12 +239,6 @@ description = "Build e3sm-unified-feedstock with variant osx_64_mpiopenmpipython
 [tasks."inspect-osx_64_mpiopenmpipython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpiopenmpipython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant osx_64_mpiopenmpipython3.13.____cp313"
-[tasks."build-osx_64_mpiopenmpipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpiopenmpipython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant osx_64_mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-osx_64_mpiopenmpipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpiopenmpipython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant osx_64_mpiopenmpipython3.14.____cp314"
 [tasks."build-osx_arm64_mpihpcpython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpihpcpython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant osx_arm64_mpihpcpython3.11.____cpython directly (without setup scripts)"
@@ -329,12 +257,6 @@ description = "Build e3sm-unified-feedstock with variant osx_arm64_mpihpcpython3
 [tasks."inspect-osx_arm64_mpihpcpython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpihpcpython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant osx_arm64_mpihpcpython3.13.____cp313"
-[tasks."build-osx_arm64_mpihpcpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpihpcpython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant osx_arm64_mpihpcpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-osx_arm64_mpihpcpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpihpcpython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant osx_arm64_mpihpcpython3.14.____cp314"
 [tasks."build-osx_arm64_mpimpichpython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpimpichpython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant osx_arm64_mpimpichpython3.11.____cpython directly (without setup scripts)"
@@ -353,12 +275,6 @@ description = "Build e3sm-unified-feedstock with variant osx_arm64_mpimpichpytho
 [tasks."inspect-osx_arm64_mpimpichpython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpimpichpython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant osx_arm64_mpimpichpython3.13.____cp313"
-[tasks."build-osx_arm64_mpimpichpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpimpichpython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant osx_arm64_mpimpichpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-osx_arm64_mpimpichpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpimpichpython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant osx_arm64_mpimpichpython3.14.____cp314"
 [tasks."build-osx_arm64_mpinompipython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpinompipython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant osx_arm64_mpinompipython3.11.____cpython directly (without setup scripts)"
@@ -377,12 +293,6 @@ description = "Build e3sm-unified-feedstock with variant osx_arm64_mpinompipytho
 [tasks."inspect-osx_arm64_mpinompipython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpinompipython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant osx_arm64_mpinompipython3.13.____cp313"
-[tasks."build-osx_arm64_mpinompipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpinompipython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant osx_arm64_mpinompipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-osx_arm64_mpinompipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpinompipython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant osx_arm64_mpinompipython3.14.____cp314"
 [tasks."build-osx_arm64_mpiopenmpipython3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpiopenmpipython3.11.____cpython.yaml"
 description = "Build e3sm-unified-feedstock with variant osx_arm64_mpiopenmpipython3.11.____cpython directly (without setup scripts)"
@@ -401,12 +311,6 @@ description = "Build e3sm-unified-feedstock with variant osx_arm64_mpiopenmpipyt
 [tasks."inspect-osx_arm64_mpiopenmpipython3.13.____cp313"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpiopenmpipython3.13.____cp313.yaml"
 description = "List contents of e3sm-unified-feedstock packages built for variant osx_arm64_mpiopenmpipython3.13.____cp313"
-[tasks."build-osx_arm64_mpiopenmpipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpiopenmpipython3.14.____cp314.yaml"
-description = "Build e3sm-unified-feedstock with variant osx_arm64_mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-osx_arm64_mpiopenmpipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpiopenmpipython3.14.____cp314.yaml"
-description = "List contents of e3sm-unified-feedstock packages built for variant osx_arm64_mpiopenmpipython3.14.____cp314"
 
 [feature.smithy.dependencies]
 conda-smithy = "*"
