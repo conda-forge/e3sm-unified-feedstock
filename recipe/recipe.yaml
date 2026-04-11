@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: e3sm-unified
   version: "1.13.0rc5"
-  build: 0
+  build: 1
   mpi: ${{ mpi or "nompi" }}
   mpi_prefix: ${{ "nompi" if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
   build_prefix: ${{ mpi if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
@@ -44,7 +44,7 @@ requirements:
     - jupyter
     - livvext ==1.1.0
     - livvkit ==3.3.1
-    - mache ==3.4.1
+    - mache ==3.5.0
     #- mosaic ==1.2.1
     - mpas-analysis ==1.15.0rc2
     - mpas_tools ==1.5.0rc1
