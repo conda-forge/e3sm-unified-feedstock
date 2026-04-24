@@ -36,7 +36,7 @@ requirements:
     - cprnc ==1.1.4
     # cartopy constraint conflicts with livvext
     - e3sm_diags ==3.2.0rc1
-    - e3sm_to_cmip ==1.14.0rc2
+    - e3sm_to_cmip ==1.14.0
     - geometric_features ==1.6.3
     - globus-cli >=3.15.0
     - ipython
