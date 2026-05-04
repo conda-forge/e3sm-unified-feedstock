@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: e3sm-unified
-  version: "1.13.0rc7"
+  version: "1.13.0rc8"
   build: 0
   mpi: ${{ mpi or "nompi" }}
   mpi_prefix: ${{ "nompi" if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
@@ -45,12 +45,12 @@ requirements:
     - livvkit ==3.3.1
     - mache ==3.6.1
     - mosaic ==1.3.0
-    - mpas-analysis ==1.15.0rc2
+    - mpas-analysis ==1.15.0rc3
     - mpas_tools ==1.5.1
-    - pcmdi_metrics ==4.0.1
+    - pcmdi_metrics ==4.0.3
     - uxarray >=2024.12.0
     - xcdat ==0.11.2
-    #- zppy ==3.1.0
+    - zppy ==3.2.0rc1
     - zppy-interfaces ==0.2.1rc1
     - if: mpi != "hpc"
       then:
@@ -151,7 +151,7 @@ tests:
         - livvkit
         - mache
         - mosaic
-        #- zppy
+        - zppy
         - if: mpi != "nompi" and mpi != "hpc"
           then: ILAMB
         - if: linux
@@ -168,7 +168,7 @@ tests:
       - ipython -h
       - ipython3 -h
       - globus --help
-      #- zppy --help
+      - zppy --help
       - if: linux
         then:
           - zstash --help
