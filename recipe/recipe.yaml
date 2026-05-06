@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: e3sm-unified
-  version: "1.13.0rc8"
+  version: "1.13.0rc9"
   build: 0
   mpi: ${{ mpi or "nompi" }}
   mpi_prefix: ${{ "nompi" if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
@@ -50,7 +50,7 @@ requirements:
     - pcmdi_metrics ==4.0.3
     - uxarray >=2024.12.0
     - xcdat ==0.11.2
-    - zppy ==3.2.0rc1
+    - zppy ==3.2.0rc2
     - zppy-interfaces ==0.2.1rc1
     - if: mpi != "hpc"
       then:
