@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: e3sm-unified
-  version: "1.13.0rc9"
+  version: "1.13.0rc10"
   build: 0
   mpi: ${{ mpi or "nompi" }}
   mpi_prefix: ${{ "nompi" if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
@@ -47,7 +47,7 @@ requirements:
     - mosaic ==1.3.0
     - mpas-analysis ==1.15.0rc3
     - mpas_tools ==1.5.1
-    - pcmdi_metrics ==4.0.3
+    - pcmdi_metrics ==4.0.4
     - uxarray >=2024.12.0
     - xcdat ==0.11.2
     - zppy ==3.2.0rc2
