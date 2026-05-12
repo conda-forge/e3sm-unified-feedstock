@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: e3sm-unified
-  version: "1.12.0"
-  build: 1
+  version: "1.13.0"
+  build: 0
   mpi: ${{ mpi or "nompi" }}
   mpi_prefix: ${{ "nompi" if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
   build_prefix: ${{ mpi if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
@@ -11,10 +11,6 @@ context:
 package:
   name: ${{ name }}
   version: ${{ version }}
-
-source:
-  url: https://github.com/E3SM-Project/e3sm-unified/archive/${{ version }}.tar.gz
-  sha256: 592f37e7ba1aa5db4f8f2b2f1a8292198b1603843fe63f1b089f3f4f0751048b
 
 build:
   number: ${{ build }}
@@ -37,35 +33,38 @@ requirements:
     - r
     - cdo
     - chemdyg ==1.1.1
-    - e3sm_diags ==3.1.0
-    - e3sm_to_cmip ==1.13.0
-    - geometric_features ==1.6.1
+    - cprnc ==1.1.4
+    # cartopy constraint conflicts with livvext
+    - e3sm_diags ==3.2.0
+    - e3sm_to_cmip ==1.14.0
+    - geometric_features ==1.6.3
     - globus-cli >=3.15.0
     - ipython
     - jupyter
-    - livvkit ==3.2.0
-    - mache ==2.0.0
-    - mosaic ==1.2.1
-    - mpas-analysis ==1.14.0
-    - mpas_tools ==1.4.0
-    - pcmdi_metrics ==4.0.1
+    - livvext ==1.1.2
+    - livvkit ==3.3.1
+    - mache ==3.6.1
+    - mosaic ==1.3.0
+    - mpas-analysis ==1.15.0
+    - mpas_tools ==1.5.1
+    - pcmdi_metrics ==4.0.4
     - uxarray >=2024.12.0
-    - xcdat ==0.10.1
-    - zppy ==3.1.0
-    - zppy-interfaces ==0.2.0
+    - xcdat ==0.11.2
+    - zppy ==3.2.0
+    - zppy-interfaces ==0.2.1
     - if: mpi != "hpc"
       then:
         - moab ==5.6.0 ${{ mpi_prefix }}_tempest_*
-        - nco ==5.3.6
+        - nco ==5.3.9
         - tempest-remap ==2.2.0
-        - tempest-extremes ==2.4 ${{ mpi_prefix }}_*
+        - tempest-extremes ==2.4.2 ${{ mpi_prefix }}_*
     - if: mpi != "nompi" and mpi != "hpc"
       then: ilamb ==2.7.2
     - if: linux
       then:
         - e3sm-tools ==3.0.2
         - squadgen ==1.2.2
-        - zstash ==1.5.0
+        - zstash ==1.6.0
 
     ### mkdocs
     - mkdocs-material
@@ -83,43 +82,44 @@ requirements:
     - bottleneck
     - cartopy >=0.17.0
     - cmocean
-    - dask ==2025.9.1
+    - dask ==2026.3.0
     - dogpile.cache
     - eofs
-    - esmf ==8.9.0 ${{ mpi_prefix }}_*
-    - esmpy ==8.9.0
+    - esmf ==8.9.1 ${{ mpi_prefix }}_*
+    - esmpy ==8.9.1
     - f90nml
     - ffmpeg
     - globus-sdk
     - gsw
     - hdf5 ==1.14.6 ${{ mpi_prefix }}_*
     - ipygany
-    - libnetcdf ==4.9.3 ${{ mpi_prefix }}_*
+    - libnetcdf ==4.10.0 ${{ mpi_prefix }}_*
     - lxml
-    - matplotlib-base ==3.10.6
+    - matplotlib-base ==3.10.8
     - metpy
     - if: mpi != "nompi" and mpi != "hpc"
       then: mpi4py
-    - ncview ==2.1.8
+    - ncview ==2.1.11
     - ncvis-climate ==2024.01.26
     - nc-time-axis
-    - netcdf4 ==1.7.2 nompi_*
+    - netcdf4 ==1.7.4 nompi_*
     - notebook
-    - numpy >=2.0.0
+    - numpy >=2.0.0,<3.0.0
     - if: mpi == "openmpi"
       then: openssh
     - output_viewer ==1.3.3
     - pillow
     - plotly
     - progressbar2
-    - proj ==9.6.2
+    - proj ==9.7.1
     - pyevtk
     - pyproj ==3.7.2
     - pyremap
     - pytest
+    - pytorch ==2.10.0
     - pywavelets
     - r-tidyverse
-    - r-dplyr ==1.1.4
+    - r-dplyr ==1.2.0
     - r-ggplot2
     - scikit-image
     - scipy >=0.9.0
@@ -127,10 +127,10 @@ requirements:
     - sympy >=0.7.6
     - tabulate
     - windspharm
-    - xarray ==2025.9.0
-    - xesmf ==0.8.8
+    - xarray ==2026.2.0
+    - xesmf ==0.9.2
 
-    # additional ilamb 2.7 dependencies, for system MPI builds
+    # additional ilamb 2.7.2 dependencies, for system MPI builds
     - if: mpi == "hpc"
       then:
         - cython
@@ -147,8 +147,10 @@ tests:
         - mpas_analysis
         - IPython
         - globus_cli
+        - livvext
         - livvkit
         - mache
+        - mosaic
         - zppy
         - if: mpi != "nompi" and mpi != "hpc"
           then: ILAMB
@@ -159,6 +161,7 @@ tests:
 
   - script:
       - mpas_analysis --version
+      - lex-cfg --help
       - livv --version
       - e3sm_diags --help
       - jupyter --help
@@ -180,9 +183,6 @@ tests:
           - GenerateCSMesh --res 64 --alt --file gravitySam.000000.3d.cubedSphere.g
           - ESMF_RegridWeightGen --help
           - test -f ${PREFIX}/bin/Climatology
-    requirements:
-      run:
-        - pytest
 
 about:
   homepage: https://github.com/E3SM-Project/e3sm-unified
