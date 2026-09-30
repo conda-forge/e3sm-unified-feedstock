@@ -30,14 +30,22 @@ requirements:
   run:
     ### main packages ###
     - python
-    - r
-    - cdo
+    # r-base is only built with gsl 2.7 but nco 5.4.0 requires gsl 2.8
+    # - r
+    # cdo 2.6.1 is not available on osx and cdo 2.5.0 requires libnetcdf <4.10.1
+    - if: linux
+      then: cdo
     - chemdyg ==1.1.1
     - cprnc ==1.1.4
-    - e3sm_diags ==3.2.0
+    # e3sm_diags 3.3.0 is not yet available and 3.2.0 requires python <3.14
+    # and cartopy <0.25
+    # - e3sm_diags ==3.3.0
     - e3sm_to_cmip ==1.14.0
     - e3sm-quickview ==2.10.1
-    - e3sm_compareview ==1.11.0
+    # e3sm_compareview 1.11.0 requires numpy <2.4, which conflicts with
+    # windspharm (via pyspharm) on linux-aarch64
+    - if: not (linux and aarch64)
+      then: e3sm_compareview ==1.11.0
     - geometric_features ==1.6.3
     - globus-cli >=3.15.0
     - ipython
@@ -45,7 +53,9 @@ requirements:
     - livvext ==1.1.2
     - livvkit ==3.3.1
     - mache ==4.0.0
-    - mosaic ==1.3.0
+    # mosaic 1.3.0 requires cartopy <=0.24.0
+    # https://github.com/E3SM-Project/mosaic/issues/64
+    # - mosaic ==1.3.0
     - mpas-analysis ==1.16.0rc1
     - mpas_tools ==2.1.0
     - pcmdi_metrics ==4.2.1
@@ -125,9 +135,10 @@ requirements:
     - pytest
     - pytorch ==2.13.0
     - pywavelets
-    - r-tidyverse
-    - r-dplyr ==1.2.0
-    - r-ggplot2
+    # r-base is only built with gsl 2.7 but nco 5.4.0 requires gsl 2.8
+    # - r-tidyverse
+    # - r-dplyr ==1.2.0
+    # - r-ggplot2
     - scikit-image
     - scipy >=0.9.0
     - shapely
@@ -150,17 +161,18 @@ tests:
   - python:
       imports:
         - chemdyg
-        - e3sm_diags
+        # - e3sm_diags
         - e3sm_to_cmip
         - e3sm_quickview
-        - e3sm_compareview
+        - if: not (linux and aarch64)
+          then: e3sm_compareview
         - mpas_analysis
         - IPython
         - globus_cli
         - livvext
         - livvkit
         - mache
-        - mosaic
+        # - mosaic
         - uxarray
         - zppy
         - if: mpi != "nompi" and mpi != "hpc"
@@ -174,9 +186,11 @@ tests:
       - mpas_analysis --version
       - lex-cfg --help
       - livv --version
-      - e3sm_diags --help
+      # - e3sm_diags --help
       - quickview --help
-      - quickcompare --help
+      - if: not (linux and aarch64)
+        then:
+          - quickcompare --help
       - jupyter --help
       - ipython -h
       - ipython3 -h
