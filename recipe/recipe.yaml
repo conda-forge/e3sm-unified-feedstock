@@ -42,10 +42,7 @@ requirements:
     # - e3sm_diags ==3.3.0
     - e3sm_to_cmip ==1.14.0
     - e3sm-quickview ==2.10.1
-    # e3sm_compareview 1.11.0 requires numpy <2.4, which conflicts with
-    # windspharm (via pyspharm) on linux-aarch64
-    - if: not (linux and aarch64)
-      then: e3sm_compareview ==1.11.0
+    - e3sm_compareview ==1.11.2
     - geometric_features ==1.6.3
     - globus-cli >=3.15.0
     - ipython
@@ -185,10 +182,7 @@ tests:
       - livv --version
       # - e3sm_diags --help
       - quickview --help
-      # currently failing with paraview 6.2.0
-      # - if: not (linux and aarch64)
-      #   then:
-      #     - quickcompare --help
+      - quickcompare --help
       - jupyter --help
       - ipython -h
       - ipython3 -h
