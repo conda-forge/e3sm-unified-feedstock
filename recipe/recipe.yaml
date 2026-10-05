@@ -37,10 +37,8 @@ requirements:
       then: cdo
     - chemdyg ==1.1.1
     - cprnc ==1.1.4
-    # e3sm_diags 3.3.0 is not yet available and 3.2.0 requires python <3.14
-    # and cartopy <0.25
-    # - e3sm_diags ==3.3.0
-    - e3sm_to_cmip ==1.14.0
+    - e3sm_diags ==3.3.0rc1
+    - e3sm_to_cmip ==1.14.1rc1
     - e3sm-quickview ==2.10.1
     - e3sm_compareview ==1.11.2
     - geometric_features ==1.6.3
@@ -152,7 +150,7 @@ tests:
   - python:
       imports:
         - chemdyg
-        # - e3sm_diags
+        - e3sm_diags
         - e3sm_to_cmip
         - e3sm_quickview
         - if: not (linux and aarch64)
@@ -177,7 +175,7 @@ tests:
       - mpas_analysis --version
       - lex-cfg --help
       - livv --version
-      # - e3sm_diags --help
+      - e3sm_diags --help
       - quickview --help
       - quickcompare --help
       - jupyter --help
