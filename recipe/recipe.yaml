@@ -39,7 +39,7 @@ requirements:
     - cprnc ==1.1.4
     - e3sm_diags ==3.3.0rc1
     - e3sm_to_cmip ==1.15.0rc1
-    - e3sm-quickview ==2.10.1
+    - e3sm-quickview ==2.10.2
     - e3sm_compareview ==1.11.2
     - geometric_features ==1.6.3
     - globus-cli >=3.15.0
