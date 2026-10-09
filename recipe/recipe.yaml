@@ -47,7 +47,7 @@ requirements:
     - jupyter
     - livvext ==1.1.2
     - livvkit ==3.3.1
-    - mache ==5.0.0rc1
+    - mache ==5.0.0rc2
     - mosaic ==1.3.1
     - mpas-analysis ==1.16.0rc1
     - mpas_tools ==2.1.0
