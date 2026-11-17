@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: e3sm-unified
-  version: "1.14.0rc4"
+  version: "1.14.0rc5"
   build: 0
   mpi: ${{ mpi or "nompi" }}
   mpi_prefix: ${{ "nompi" if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
@@ -30,13 +30,14 @@ requirements:
   run:
     ### main packages ###
     - python
-    # r-base is only built with gsl 2.7 but nco 5.4.1 requires gsl 2.8
+    # r packages don't have builds for R 4.6 (the only R built with gsl 2.8,
+    # which nco 5.4.2 requires)
     # - r
     # cdo 2.6.1 is not available on osx and cdo 2.5.0 requires libnetcdf <4.10.1
     - if: linux
       then: cdo
     - chemdyg ==1.1.1
-    - cprnc ==1.1.4
+    - cprnc ==1.1.7
     - e3sm_diags ==3.3.0rc3
     - e3sm_to_cmip ==1.15.0rc1
     - e3sm-quickview ==2.10.5
@@ -47,27 +48,27 @@ requirements:
     - jupyter
     - livvext ==1.1.2
     - livvkit ==3.3.1
-    - mache ==5.0.0
+    - mache ==5.4.0
     - mosaic ==1.3.1
     - mpas-analysis ==1.16.0rc1
-    - mpas_tools ==2.1.0
+    - mpas_tools ==2.2.1
     - pcmdi_metrics ==4.2.1
     # uxarray without geo and viz extras
     - uxarray-base >=2026.09.1
     - xcdat ==0.11.5
-    - zppy ==3.3.0rc2
-    - zppy-interfaces ==0.3.0rc1
+    - zppy ==3.3.0rc3
+    - zppy-interfaces ==0.3.0rc2
     - if: mpi != "hpc"
       then:
         - moab ==5.6.0 ${{ mpi_prefix }}_tempest_*
-        - nco ==5.4.1
+        - nco ==5.4.2
         - tempest-remap ==2.2.0
         - tempest-extremes ==2.4.2 ${{ mpi_prefix }}_*
     - if: mpi != "nompi" and mpi != "hpc"
       then: ilamb ==2.7.2
     - if: linux
       then:
-        - e3sm-tools ==3.0.2
+        - e3sm-tools ==3.1.0
         - squadgen ==1.2.2
         - zstash ==1.6.1rc1
 
@@ -116,15 +117,15 @@ requirements:
     - pillow
     - plotly
     - progressbar2
-    # TODO: proj 9.9.0 once cdo and rasterio have been rebuilt for it
-    - proj ==9.8.1
+    - proj ==9.9.0
     - pyevtk
     - pyproj ==3.8.0
     - pyremap
     - pytest
     - pytorch ==2.13.0
     - pywavelets
-    # r-base is only built with gsl 2.7 but nco 5.4.1 requires gsl 2.8
+    # r packages don't have builds for R 4.6 (the only R built with gsl 2.8,
+    # which nco 5.4.2 requires)
     # - r-tidyverse
     # - r-dplyr ==1.2.0
     # - r-ggplot2

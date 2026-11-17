@@ -1,3 +1,5 @@
+DOCKER_PLATFORM:
+- linux/aarch64
 channel_sources:
 - conda-forge/label/e3sm_to_cmip_dev,conda-forge/label/e3sm_diags_dev,conda-forge/label/mpas_analysis_dev,conda-forge/label/zppy_interfaces_dev,conda-forge/label/zppy_dev,conda-forge/label/zstash_dev,conda-forge
 channel_targets:
