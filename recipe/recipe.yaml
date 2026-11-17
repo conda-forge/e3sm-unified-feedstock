@@ -36,7 +36,7 @@ requirements:
     - if: linux
       then: cdo
     - chemdyg ==1.1.1
-    - cprnc ==1.1.4
+    - cprnc ==1.1.7
     - e3sm_diags ==3.3.0rc3
     - e3sm_to_cmip ==1.15.0rc1
     - e3sm-quickview ==2.10.5
