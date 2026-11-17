@@ -30,7 +30,9 @@ requirements:
   run:
     ### main packages ###
     - python
-    - r
+    # r packages don't have builds for R 4.6 (the only R built with gsl 2.8,
+    # which nco 5.4.2 requires)
+    # - r
     # cdo 2.6.1 is not available on osx and cdo 2.5.0 requires libnetcdf <4.10.1
     - if: linux
       then: cdo
@@ -122,9 +124,11 @@ requirements:
     - pytest
     - pytorch ==2.13.0
     - pywavelets
-    - r-tidyverse
-    - r-dplyr ==1.2.0
-    - r-ggplot2
+    # r packages don't have builds for R 4.6 (the only R built with gsl 2.8,
+    # which nco 5.4.2 requires)
+    # - r-tidyverse
+    # - r-dplyr ==1.2.0
+    # - r-ggplot2
     - scikit-image
     - scipy >=0.9.0
     - shapely
