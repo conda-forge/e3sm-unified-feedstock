@@ -30,8 +30,7 @@ requirements:
   run:
     ### main packages ###
     - python
-    # r-base is only built with gsl 2.7 but nco 5.4.1 requires gsl 2.8
-    # - r
+    - r
     # cdo 2.6.1 is not available on osx and cdo 2.5.0 requires libnetcdf <4.10.1
     - if: linux
       then: cdo
@@ -116,18 +115,16 @@ requirements:
     - pillow
     - plotly
     - progressbar2
-    # TODO: proj 9.9.0 once cdo and rasterio have been rebuilt for it
-    - proj ==9.8.1
+    - proj ==9.9.0
     - pyevtk
     - pyproj ==3.8.0
     - pyremap
     - pytest
     - pytorch ==2.13.0
     - pywavelets
-    # r-base is only built with gsl 2.7 but nco 5.4.1 requires gsl 2.8
-    # - r-tidyverse
-    # - r-dplyr ==1.2.0
-    # - r-ggplot2
+    - r-tidyverse
+    - r-dplyr ==1.2.0
+    - r-ggplot2
     - scikit-image
     - scipy >=0.9.0
     - shapely
