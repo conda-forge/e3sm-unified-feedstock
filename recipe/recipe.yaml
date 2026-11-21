@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: e3sm-unified
-  version: "1.13.0"
+  version: "1.14.0"
   build: 0
   mpi: ${{ mpi or "nompi" }}
   mpi_prefix: ${{ "nompi" if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
@@ -15,7 +15,7 @@ package:
 build:
   number: ${{ build }}
   skip:
-    - win or match(python, "<3.11") or match(python, ">=3.14")
+    - win or match(python, "<3.12") or match(python, ">=3.15")
 
   # add build string so packages can depend on
   # mpi or nompi variants explicitly:
@@ -30,40 +30,47 @@ requirements:
   run:
     ### main packages ###
     - python
-    - r
-    - cdo
+    # r packages don't have builds for R 4.6 (the only R built with gsl 2.8,
+    # which nco 5.4.2 requires)
+    # - r
+    # cdo 2.6.1 is not available on osx and cdo 2.5.0 requires libnetcdf <4.10.1
+    - if: linux
+      then: cdo
     - chemdyg ==1.1.1
-    - cprnc ==1.1.4
-    - e3sm_diags ==3.2.0
-    - e3sm_to_cmip ==1.14.0
+    - cprnc ==1.1.7
+    - e3sm_diags ==3.3.0
+    - e3sm_to_cmip ==1.15.0
+    - e3sm-quickview ==2.10.5
+    - e3sm_compareview ==1.11.3
     - geometric_features ==1.6.3
     - globus-cli >=3.15.0
     - ipython
     - jupyter
     - livvext ==1.1.2
     - livvkit ==3.3.1
-    - mache ==3.6.1
-    - mosaic ==1.3.0
-    - mpas-analysis ==1.15.0
-    - mpas_tools ==1.5.1
-    - pcmdi_metrics ==4.0.4
-    - uxarray >=2024.12.0
-    - xcdat ==0.11.2
-    - zppy ==3.2.0
-    - zppy-interfaces ==0.2.1
+    - mache ==5.5.2
+    - mosaic ==1.3.1
+    - mpas-analysis ==1.16.0
+    - mpas_tools ==2.2.1
+    - pcmdi_metrics ==4.2.1
+    # uxarray without geo and viz extras
+    - uxarray-base >=2026.09.1
+    - xcdat ==0.11.5
+    - zppy ==3.3.0
+    - zppy-interfaces ==0.3.0
     - if: mpi != "hpc"
       then:
         - moab ==5.6.0 ${{ mpi_prefix }}_tempest_*
-        - nco ==5.3.9
+        - nco ==5.4.2
         - tempest-remap ==2.2.0
         - tempest-extremes ==2.4.2 ${{ mpi_prefix }}_*
     - if: mpi != "nompi" and mpi != "hpc"
       then: ilamb ==2.7.2
     - if: linux
       then:
-        - e3sm-tools ==3.0.2
+        - e3sm-tools ==3.1.0
         - squadgen ==1.2.2
-        - zstash ==1.6.0
+        - zstash ==1.6.1
 
     ### mkdocs
     - mkdocs-material
@@ -79,9 +86,9 @@ requirements:
       then: ${{ mpi }}
     - blas
     - bottleneck
-    - cartopy >=0.17.0
+    - cartopy ==0.26.0
     - cmocean
-    - dask ==2026.3.0
+    - dask ==2026.8.0
     - dogpile.cache
     - eofs
     - esmf ==8.9.1 ${{ mpi_prefix }}_*
@@ -92,14 +99,14 @@ requirements:
     - gsw
     - hdf5 ==1.14.6 ${{ mpi_prefix }}_*
     - ipygany
-    - libnetcdf ==4.10.0 ${{ mpi_prefix }}_*
+    - libnetcdf ==4.10.1 ${{ mpi_prefix }}_*
     - lxml
-    - matplotlib-base ==3.10.8
+    - matplotlib-base ==3.11.1
     - metpy
     - if: mpi != "nompi" and mpi != "hpc"
       then: mpi4py
     - ncview ==2.1.11
-    - ncvis-climate ==2024.01.26
+    - ncvis-climate ==2026.10.07
     - nc-time-axis
     - netcdf4 ==1.7.4 nompi_*
     - notebook
@@ -110,24 +117,27 @@ requirements:
     - pillow
     - plotly
     - progressbar2
-    - proj ==9.7.1
+    - proj ==9.9.0
     - pyevtk
-    - pyproj ==3.7.2
+    - pyproj ==3.8.0
     - pyremap
     - pytest
-    - pytorch ==2.10.0
+    - pytorch ==2.13.0
     - pywavelets
-    - r-tidyverse
-    - r-dplyr ==1.2.0
-    - r-ggplot2
+    # r packages don't have builds for R 4.6 (the only R built with gsl 2.8,
+    # which nco 5.4.2 requires)
+    # - r-tidyverse
+    # - r-dplyr ==1.2.0
+    # - r-ggplot2
     - scikit-image
     - scipy >=0.9.0
     - shapely
     - sympy >=0.7.6
     - tabulate
     - windspharm
-    - xarray ==2026.2.0
+    - xarray ==2026.7.0
     - xesmf ==0.9.2
+    - zarr >=3
 
     # additional ilamb 2.7.2 dependencies, for system MPI builds
     - if: mpi == "hpc"
@@ -137,12 +147,20 @@ requirements:
         - psutil
         - pandas
 
+    # needed for e3sm-quickview and e3sm_compareview
+    - if: linux
+      then:
+        - mesa-llvmpipe
+
 tests:
   - python:
       imports:
         - chemdyg
         - e3sm_diags
         - e3sm_to_cmip
+        - e3sm_quickview
+        - if: not (linux and aarch64)
+          then: e3sm_compareview
         - mpas_analysis
         - IPython
         - globus_cli
@@ -150,6 +168,7 @@ tests:
         - livvkit
         - mache
         - mosaic
+        - uxarray
         - zppy
         - if: mpi != "nompi" and mpi != "hpc"
           then: ILAMB
@@ -163,6 +182,8 @@ tests:
       - lex-cfg --help
       - livv --version
       - e3sm_diags --help
+      - quickview --help
+      - quickcompare --help
       - jupyter --help
       - ipython -h
       - ipython3 -h
