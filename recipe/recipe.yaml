@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: e3sm-unified
   version: "1.14.0"
-  build: 0
+  build: 1
   mpi: ${{ mpi or "nompi" }}
   mpi_prefix: ${{ "nompi" if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
   build_prefix: ${{ mpi if mpi in ["nompi", "hpc"] else "mpi_" + mpi }}
@@ -40,8 +40,8 @@ requirements:
     - cprnc ==1.1.7
     - e3sm_diags ==3.3.0
     - e3sm_to_cmip ==1.15.0
-    - e3sm-quickview ==2.10.5
-    - e3sm_compareview ==1.11.3
+    - e3sm-quickview ==2.11.0
+    - e3sm_compareview ==1.11.5
     - geometric_features ==1.6.3
     - globus-cli >=3.15.0
     - ipython
